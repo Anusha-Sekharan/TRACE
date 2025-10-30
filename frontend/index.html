@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRACE - AI-Driven Team Formation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>TRACE Platform</h1>
+        <p>Verify skills, find matches, ace interviews with AI</p>
+    </header>
+
+    <main>
+        <section id="register">
+            <h2>Register</h2>
+            <form id="registerForm">
+                <input type="text" id="name" placeholder="Name" required>
+                <input type="email" id="email" placeholder="Email" required>
+                <input type="text" id="skills" placeholder="Skills (comma-separated)" required>
+                <button type="submit">Register</button>
+            </form>
+            <p id="registerMessage"></p>
+        </section>
+
+        <section id="verify">
+            <h2>Verify Skills</h2>
+            <input type="text" id="userId" placeholder="User ID" required>
+            <button id="verifyBtn">Verify Skills</button>
+            <p id="verifyMessage"></p>
+        </section>
+
+        <section id="match">
+            <h2>Find Matches</h2>
+            <input type="text" id="matchUserId" placeholder="User ID" required>
+            <button id="matchBtn">Find Matches</button>
+            <ul id="matchesList"></ul>
+        </section>
+
+        <section id="interview">
+            <h2>AI Interview</h2>
+            <input type="text" id="interviewUserId" placeholder="User ID" required>
+            <input type="text" id="question" placeholder="Ask a question" required>
+            <button id="askBtn">Ask</button>
+            <p id="interviewResponse"></p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
