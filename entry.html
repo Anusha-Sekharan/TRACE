@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRACE | Access Gateway</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Professional Dark Background */
+            background: #1b263b; 
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .gateway-container {
+            padding: 40px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            max-width: 500px;
+            width: 90%;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #ff80ab; /* Highlight with your theme pink */
+            margin-bottom: 10px;
+        }
+
+        .slogan {
+            font-size: 1.2em;
+            opacity: 0.8;
+            margin-bottom: 40px;
+        }
+
+        .start-btn {
+            background: #ff80ab; 
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .start-btn:hover {
+            background: #ff4081;
+            transform: scale(1.05);
+        }
+        
+        /* Optional: Adding a basic fade-out animation for a dynamic feel */
+        .fade-out {
+            animation: fadeOut 0.5s forwards;
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="gateway-container">
+        <h1>TRACE</h1>
+        <p class="slogan">Verify. Match. Innovate.</p>
+        <button class="start-btn" onclick="startVerification()">Enter Secure Platform</button>
+    </div>
+
+    <script>
+        function startVerification() {
+            // Apply a dynamic fade-out effect
+            document.body.classList.add('fade-out');
+            
+            // Wait for the animation to complete, then navigate to the main login page
+            setTimeout(() => {
+                // IMPORTANT: This navigates to your existing main login page
+                window.location.href = 'index.html'; 
+            }, 500); 
+        }
+    </script>
+</body>
+</html>

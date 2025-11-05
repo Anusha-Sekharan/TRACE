@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRACE - Verified Skill Matching</title>
+    <link rel="stylesheet" href="style.css">
+    </head>
+<body>
+    <div class="login-container">
+        <h1>Welcome to TRACE ✨</h1> 
+        <p class="tagline">The AI-driven platform for authentic skill-based matching.</p>
+        
+        <div class="verification-prompt">
+            <h3>Skills Verification</h3>
+            <p>Connect with your preferred platform to validate your skills.</p>
+            
+            <div class="auth-buttons">
+                <button class="btn github" onclick="handleGitHubAuth()">
+                    <i class="icon">💻</i> Via GitHub
+                </button>
+                <button class="btn coursera" onclick="handleLogin('Coursera')">
+                    <i class="icon">📚</i> Via Coursera
+                </button>
+                <button class="btn linkedin" onclick="handleLogin('LinkedIn')">
+                    <i class="icon">💼</i> Via LinkedIn
+                </button>
+            </div>
+            
+            <!-- Role / skill search -->
+            <div class="role-search">
+                <input id="role-search" type="text" placeholder="Type a role or skill (e.g. 'ml engineer')" />
+                <button class="btn" onclick="handleRoleSearch()">Search Role</button>
+                <p class="hint">Try: ml engineer, full stack, cyber security, data science</p>
+            </div>
+            
+            <div id="github-profile" style="display: none;" class="github-profile">
+                <div class="profile-header">
+                    <img id="github-avatar" class="avatar" src="" alt="GitHub Avatar">
+                    <div class="profile-info">
+                        <h4 id="github-username"></h4>
+                        <p id="github-bio"></p>
+                    </div>
+                </div>
+                <div class="skills-analysis">
+                    <h4>Detected Skills</h4>
+                    <div id="github-skills" class="skills-grid"></div>
+                </div>
+                <div class="repo-list">
+                    <h4>Top Repositories</h4>
+                    <div id="github-repos"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="register-section">
+            <button class="toggle-btn" onclick="toggleRegisterForm()">
+                Or, Register with Email & Password
+            </button>
+            <form id="registerForm" style="display:none;">
+    <input type="text" id="regName" placeholder="Enter your Full Name" required>
+    <input type="email" id="regEmail" placeholder="Enter your Email ID" required>
+    <input type="password" id="regPassword" placeholder="Create Password" required>
+    <button type="submit" class="register-btn" onclick="handleRegistration(event)">
+        Register & Continue
+    </button>
+</form>
+        </div>
+
+        <p class="privacy-note">By linking or registering, you consent to data linking and privacy compliance.</p>
+        <div id="status-message" class="status-box"></div>
+
+        <!-- Coursera Certificate Upload Modal -->
+        <div id="courseraModal" class="modal">
+            <div class="modal-content">
+                <h2>Upload Your Coursera Certificates</h2>
+                <p>Please upload your Coursera certificates to verify your skills.</p>
+                <form id="certificateUploadForm" onsubmit="handleCertificateUpload(event)">
+                    <div class="upload-area" id="uploadArea">
+                        <div class="upload-prompt">
+                            <i class="upload-icon">📄</i>
+                            <p>Drag & drop your certificates here or</p>
+                            <label for="certificateInput" class="upload-btn">Choose Files</label>
+                            <input type="file" id="certificateInput" multiple accept=".pdf,.jpg,.png" style="display: none;" onchange="handleFileSelect(event)">
+                        </div>
+                        <div id="fileList" class="file-list"></div>
+                    </div>
+                    <div class="upload-note">
+                        <p>✅ Accepted formats: PDF, JPG, PNG</p>
+                        <p>✅ You can upload multiple certificates at once</p>
+                    </div>
+                    <div class="modal-buttons">
+                        <button type="submit" class="btn coursera-login-btn">Verify Certificates</button>
+                        <button type="button" class="btn cancel-btn" onclick="document.getElementById('courseraModal').style.display='none'">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="github_auth.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
